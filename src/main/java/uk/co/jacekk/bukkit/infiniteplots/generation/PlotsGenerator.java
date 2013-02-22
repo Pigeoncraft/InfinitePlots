@@ -24,8 +24,9 @@ public class PlotsGenerator extends ChunkGenerator {
 	private byte wallLowerData;
 	private byte wallUpperId;
 	private byte wallUpperData;
+	private boolean decjunctions;
 	
-	public PlotsGenerator(int size, int height, byte pathId, byte pathData, byte wallLowerId, byte wallLowerData, byte wallUpperId, byte wallUpperData){
+	public PlotsGenerator(int size, int height, byte pathId, byte pathData, byte wallLowerId, byte wallLowerData, byte wallUpperId, byte wallUpperData, boolean decjunctions){
 		this.size = size;
 		this.height = height;
 		this.pathId = pathId;
@@ -34,13 +35,14 @@ public class PlotsGenerator extends ChunkGenerator {
 		this.wallLowerData = wallLowerData;
 		this.wallUpperId = wallUpperId;
 		this.wallUpperData = wallUpperData;
+		this.decjunctions = decjunctions;
 	}
 	
 	@Override
 	public List<BlockPopulator> getDefaultPopulators(World world){
 		ArrayList<BlockPopulator> populators = new ArrayList<BlockPopulator>();
 		
-		populators.add(new PathPopulator(this.size, this.height, this.pathId, this.pathData, this.wallLowerId, this.wallLowerData, this.wallUpperId, this.wallUpperData));
+		populators.add(new PathPopulator(this.size, this.height, this.pathId, this.pathData, this.wallLowerId, this.wallLowerData, this.wallUpperId, this.wallUpperData, this.decjunctions));
 		
 		return populators;
 	}

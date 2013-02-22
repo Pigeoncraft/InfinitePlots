@@ -1,1 +1,3 @@
 This plugin provides a simple generator for server admins to use to create an infinite world of building plots (of a configurable size), the idea is for it to be used to create a world to be used for building competitions. I made this to use on my server and am releasing it just in case anyone else is looking for the same thing.
+
+This is a forked project and I would recommended to use the official code by 'betterphp' as my code is a test of my ideas and are not guaranteed to be stable. Thank you!

@@ -20,8 +20,9 @@ public class PathPopulator extends BlockPopulator {
 	private byte wallLowerData;
 	private byte wallUpperId;
 	private byte wallUpperData;
+	private boolean decjunctions;
 	
-	public PathPopulator(int size, int height, byte pathId, byte pathData, byte wallLowerId, byte wallLowerData, byte wallUpperId, byte wallUpperData){
+	public PathPopulator(int size, int height, byte pathId, byte pathData, byte wallLowerId, byte wallLowerData, byte wallUpperId, byte wallUpperData, boolean decjunctions){
 		this.size = size;
 		this.height = height;
 		this.pathId = pathId;
@@ -30,6 +31,7 @@ public class PathPopulator extends BlockPopulator {
 		this.wallLowerData = wallLowerData;
 		this.wallUpperId = wallUpperId;
 		this.wallUpperData = wallUpperData;
+		this.decjunctions = decjunctions;
 	}
 	
 	@Override
@@ -71,7 +73,7 @@ public class PathPopulator extends BlockPopulator {
 					world.getBlockAt(x, y + 1, z + 3).setTypeIdAndData(this.wallUpperId, this.wallUpperData, false);
 				}
 				
-				if (x % this.size == 0 && z % this.size == 0){
+				if (x % this.size == 0 && z % this.size == 0 && this.decjunctions == true){
 					// Junction
 					world.getBlockAt(x, y - 1, z).setType(Material.REDSTONE_TORCH_ON);
 					

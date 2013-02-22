@@ -80,8 +80,9 @@ public class InfinitePlots extends BasePlugin {
 		byte wallLowerData = (byte) this.config.getInt(Config.BLOCKS_LOWER_WALL_DATA);
 		byte wallUpperId = (byte) this.config.getInt(Config.BLOCKS_UPPER_WALL);
 		byte wallUpperData = (byte) this.config.getInt(Config.BLOCKS_UPPER_WALL_DATA);
+		boolean decjunctions = this.config.getBoolean(Config.DECORATIVE_JUNCTIONS);
 		
-		return new PlotsGenerator(size, height, pathId, pathData, wallLowerId, wallLowerData, wallUpperId, wallUpperData);
+		return new PlotsGenerator(size, height, pathId, pathData, wallLowerId, wallLowerData, wallUpperId, wallUpperData, decjunctions);
 	}
 	
 	public static InfinitePlots getInstance(){
